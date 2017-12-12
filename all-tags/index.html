@@ -56,7 +56,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="2">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">Echo&#39;s Blog</a>
@@ -80,7 +80,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="2">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -89,7 +89,7 @@
                 </a>
                 <h4 class="sidebar-profile-name">Echo Wang</h4>
                 
-                    <h5 class="sidebar-profile-bio"><p>Coding &amp; Reading</p>
+                    <h5 class="sidebar-profile-bio"><p>Coding &amp; Reading<br> wang.huanjun@qq.com</p>
 </h5>
                 
             </div>
@@ -138,7 +138,7 @@
             
                 <li class="sidebar-button">
                     
-                        <a  class="sidebar-button-link "
+                        <a  class="sidebar-button-link open-algolia-search"
                              href="/all-archives"
                             
                             title="归档"
@@ -146,19 +146,6 @@
                     
                         <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">归档</span>
-                    </a>
-            </li>
-            
-                <li class="sidebar-button">
-                    
-                        <a  class="sidebar-button-link open-algolia-search"
-                             href="#search"
-                            
-                            title="搜索"
-                        >
-                    
-                        <i class="sidebar-button-icon fa fa-lg fa-search" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">搜索</span>
                     </a>
             </li>
             
@@ -179,20 +166,12 @@
         
             <ul class="sidebar-buttons">
             
-        </ul>
-        
-            <ul class="sidebar-buttons">
-            
                 <li class="sidebar-button">
                     
-                        <a  class="sidebar-button-link "
-                             href="/atom.xml"
-                            
-                            title="RSS"
-                        >
+                        <a  class="sidebar-button-link " href="https://github.com/huanjunwang" target="_blank" rel="noopener" title="GitHub">
                     
-                        <i class="sidebar-button-icon fa fa-lg fa-rss" aria-hidden="true"></i>
-                        <span class="sidebar-button-desc">RSS</span>
+                        <i class="sidebar-button-icon fa fa-lg fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
                     </a>
             </li>
             
@@ -202,7 +181,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="2"
                  class="
                         hasCoverMetaIn
                         ">
@@ -217,8 +196,41 @@
 
         <section>
         
+            <a class="tag tag--primary tag--small" href="#BST-list" data-tag="bst">
+                BST
+            </a>
+        
     </section>
     <section class="boxes">
+        
+            <div id="BST-list" class="archive box" data-tag="bst">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/tags/BST">
+                        BST (2)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2017/12/12/Black-Red-Tree/">
+                                红黑树
+                            </a>
+                            <span class="archive-post-date">
+                                 - 12月 12, 2017
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/2017/12/12/AVL-Tree/">
+                                AVL 树
+                            </a>
+                            <span class="archive-post-date">
+                                 - 12月 12, 2017
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
         
     </section>
 </div>
@@ -249,7 +261,7 @@
         
             <h4 id="about-card-name">Echo Wang</h4>
         
-            <div id="about-card-bio"><p>Coding &amp; Reading</p>
+            <div id="about-card-bio"><p>Coding &amp; Reading<br> wang.huanjun@qq.com</p>
 </div>
         
         
