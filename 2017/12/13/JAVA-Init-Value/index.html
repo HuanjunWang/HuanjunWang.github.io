@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Echo&#39;s Blog">
-    <title>AVL 树 - Echo&#39;s Blog</title>
+    <title>JAVA 初始值问题 - Echo&#39;s Blog</title>
     <meta name="author" content="Echo Wang">
     
         <meta name="keywords" content="hexo,javascript,">
@@ -15,18 +15,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="AVL Tree 是一种自平衡二叉查找树。首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过">
-<meta name="keywords" content="BST">
+    <meta name="description" content="从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。">
+<meta name="keywords" content="JAVA">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="AVL 树">
-<meta property="og:url" content="http://wanghuanjun.github.io/2017/12/12/AVL-Tree/index.html">
+<meta property="og:title" content="JAVA 初始值问题">
+<meta property="og:url" content="http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/index.html">
 <meta property="og:site_name" content="Echo&#39;s Blog">
-<meta property="og:description" content="AVL Tree 是一种自平衡二叉查找树。首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过">
+<meta property="og:description" content="从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-15T02:38:01.900Z">
+<meta property="og:updated_time" content="2017-12-14T02:31:39.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AVL 树">
-<meta name="twitter:description" content="AVL Tree 是一种自平衡二叉查找树。首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过">
+<meta name="twitter:title" content="JAVA 初始值问题">
+<meta name="twitter:description" content="从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。">
     
     
         
@@ -192,20 +192,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            AVL 树
+            JAVA 初始值问题
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-12-12T15:04:03+08:00">
+    <time itemprop="datePublished" datetime="2017-12-13T14:31:52+08:00">
 	
-		    12月 12, 2017
+		    12月 13, 2017
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/数据结构/">数据结构</a>
+    <a class="category-link" href="/categories/JAVA/">JAVA</a>
 
 
     
@@ -216,9 +216,31 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>AVL Tree 是一种自平衡二叉查找树。<br>首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。<br>可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过旋转来维持树的平衡性，从而实现最坏情况下查询的复杂度仍为O(log n)。<br><a id="more"></a><br>AVL Tree 满足其中任一节点的左右子树的高度差不大于1。查找操作不会对树的平衡造成任何影响。参入和删除则可能影响熟的平衡性。</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/AVLTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/AVLTree.java</a></p>
-<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/avl-tree-set-1-insertion/</a><br><a href="http://www.geeksforgeeks.org/avl-tree-set-2-deletion/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/avl-tree-set-2-deletion/</a></p>
+            <p>从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。<br>JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。<br><a id="more"></a></p>
+<h4 id="函数内的局部变量"><a href="#函数内的局部变量" class="headerlink" title="函数内的局部变量"></a>函数内的局部变量</h4><p>函数内的局部变量，如果没有初始化就使用，编译器直接报错，使用这类问题不会引起什么后果。</p>
+<pre><code>Error:(xx, xx) java: variable xxxx might not have been initialized
+</code></pre><h4 id="对象的成员变量"><a href="#对象的成员变量" class="headerlink" title="对象的成员变量"></a>对象的成员变量</h4><blockquote>
+<p>默认初始值</p>
+</blockquote>
+<p>如果对象的成员变量没有通过任何方法初始化，在new出对象的时候，这些变量根据不同类型将会得到不同初始值.<br>boolean 会得到 false, byte, short, int, char, float, doubld 会得到各自类型的0， object reference 会得到 null。</p>
+<blockquote>
+<p>构造函数</p>
+</blockquote>
+<p>每一个类至少要有一个构造函数，如果没有声明任何构造函数，编译器则会自动创建一个默认的构造函数，默认构造函数时一个没有参数且函数体为空。<br>构造函数可以通过参数不同来实现重载。</p>
+<blockquote>
+<p>初始化器</p>
+</blockquote>
+<p>可以在声明变量的时候，给变量一个初始值。使用这种初始化方式时，可以引用已经声明的变量来初始化当前变量，但是不能前向引用</p>
+<pre><code>//OK
+private int a = 10;
+private int b = a;
+//Error
+private int c = d;
+private int d = 10;
+</code></pre><p>初始化器的另外一种形式时初始化块，可以在类里面定义任意块初始化块，初始化块会按照从前到后的顺序执行。初始化块可以处理异常，在有多个重载的构造函数时，可以用它来初始化各构造函数无差异的部分。</p>
+<h4 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h4><p>默认初始值 -&gt; 声明时的初始化 -&gt; 初始化块（从前到后） -&gt;  构造函数</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.javaworld.com/article/2076614/core-java/object-initialization-in-java.html" target="_blank" rel="noopener">https://www.javaworld.com/article/2076614/core-java/object-initialization-in-java.html</a></p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/Initialization.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/Initialization.java</a></p>
 
             
 
@@ -229,7 +251,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/BST/">BST</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/JAVA/">JAVA</a>
 
             </div>
         
@@ -239,8 +261,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/Black-Red-Tree/" data-tooltip="红黑树" aria-label="上一篇: 红黑树">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -249,7 +270,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/hello-world/" data-tooltip="Hello Hexo" aria-label="下一篇: Hello Hexo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/Black-Red-Tree/" data-tooltip="红黑树" aria-label="下一篇: 红黑树">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -267,7 +288,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/" title="分享到 Weibo">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/" title="分享到 Weibo">
                     <i class="fa fa-weibo" aria-hidden="true"></i>
                 </a>
             </li>
@@ -275,7 +296,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/&amp;title=AVL 树" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/&amp;title=JAVA 初始值问题" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -317,8 +338,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/Black-Red-Tree/" data-tooltip="红黑树" aria-label="上一篇: 红黑树">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -327,7 +347,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/hello-world/" data-tooltip="Hello Hexo" aria-label="下一篇: Hello Hexo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/Black-Red-Tree/" data-tooltip="红黑树" aria-label="下一篇: 红黑树">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -345,7 +365,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/" title="分享到 Weibo">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/" title="分享到 Weibo">
                     <i class="fa fa-weibo" aria-hidden="true"></i>
                 </a>
             </li>
@@ -353,7 +373,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/&amp;title=AVL 树" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/&amp;title=JAVA 初始值问题" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -380,7 +400,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/">
                     <i class="fa fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -388,7 +408,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/AVL-Tree/&amp;title=AVL 树">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/&amp;title=JAVA 初始值问题">
                     <i class="fa fa-qq" aria-hidden="true"></i><span>分享到 QQ</span>
                 </a>
             </li>

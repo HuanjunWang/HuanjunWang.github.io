@@ -15,18 +15,23 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="红黑树">
+    <meta name="description" content="红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点  每个节点都为红色或者黑色 根节点为黑色 红色节点的父节点和子节点不能为红色 从根到叶的所有路径，黑色节点数相同">
 <meta name="keywords" content="BST">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="红黑树">
 <meta property="og:url" content="http://wanghuanjun.github.io/2017/12/12/Black-Red-Tree/index.html">
 <meta property="og:site_name" content="Echo&#39;s Blog">
-<meta property="og:description" content="红黑树">
+<meta property="og:description" content="红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点  每个节点都为红色或者黑色 根节点为黑色 红色节点的父节点和子节点不能为红色 从根到叶的所有路径，黑色节点数相同">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-12T08:56:48.792Z">
+<meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png">
+<meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png">
+<meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png">
+<meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png">
+<meta property="og:updated_time" content="2017-12-15T08:05:28.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="红黑树">
-<meta name="twitter:description" content="红黑树">
+<meta name="twitter:description" content="红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点  每个节点都为红色或者黑色 根节点为黑色 红色节点的父节点和子节点不能为红色 从根到叶的所有路径，黑色节点数相同">
+<meta name="twitter:image" content="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png">
     
     
         
@@ -56,7 +61,7 @@
         
     
 
-<header id="header" data-behavior="5">
+<header id="header" data-behavior="2">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">Echo&#39;s Blog</a>
@@ -80,7 +85,7 @@
         
     
 
-<nav id="sidebar" data-behavior="5">
+<nav id="sidebar" data-behavior="2">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -181,7 +186,7 @@
 </nav>
 
             
-            <div id="main" data-behavior="5"
+            <div id="main" data-behavior="2"
                  class="
                         hasCoverMetaIn
                         ">
@@ -216,7 +221,35 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>红黑树<br><a id="more"></a></p>
+            <p>红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点</p>
+<ol>
+<li>每个节点都为红色或者黑色</li>
+<li>根节点为黑色</li>
+<li>红色节点的父节点和子节点不能为红色</li>
+<li>从根到叶的所有路径，黑色节点数相同</li>
+</ol>
+<a id="more"></a>
+<h4 id="对比-AVLTree"><a href="#对比-AVLTree" class="headerlink" title="对比 AVLTree"></a>对比 AVLTree</h4><p>AVLTree 拥有更高的平衡性，但是为了维护其平衡性，在插入和删除时便需要做更多的旋转。如果实际中插入和删除的操作比较频繁，那么使用红黑树就优于AVL Tree，反之，如果插入删除不是特别频繁，AVL Tree则更好，因为它的查询性能优于红黑树。</p>
+<h4 id="平衡性"><a href="#平衡性" class="headerlink" title="平衡性"></a>平衡性</h4><p>红黑树从根到页的所有路径中，最长路径不大于最短路径的2倍。因为使用路径的黑色节点数相同，而红色不能相邻，所以极端情况下一条路径全是黑色，一条路径红黑相间，最长路径为最短路径的两倍。</p>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ol>
+<li>先按照标准二叉查找树的方法插入新节点，并把新节点标为红色。</li>
+<li>如果新节点为根节点，则把新节点变为黑色。</li>
+<li><p>如果新节点的父节点是红色，则需要通过颜色变更和树旋转来恢复红黑树。<br>3.1 颜色变更<br>如果新节点的叔节点也为红色，则可以通过颜色变更来恢复红黑树。<br>将新节点的父节点叔节点变为黑色，祖父节点变为红色。根据祖父节点的情况再进行颜色变更或旋转。<br>3.2 旋转<br>如果新节点的叔节点为黑色或者为空，则可以通过旋转来恢复红黑树。旋转类似AVL Tree,分四种情况</p>
+<pre><code>旋转之前先更新与祖先节点的联系
+</code></pre></li>
+</ol>
+<ul>
+<li><p><strong>左左</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的左子节点<br>需要一次右旋转，并且改变祖父，父节点的颜色。<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png" alt="右旋示意图"></p>
+</li>
+<li><p><strong>左右</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的右子节点<br>需要先左旋，再右旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png" alt="右旋左旋示意图"></p>
+</li>
+<li><p><strong>右右</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的右子节点<br>需要一次左旋转， 并且改变祖父，父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png" alt="左旋示意图"></p>
+</li>
+<li><p><strong>右左</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的左子节点<br>需要先右旋，再左旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png" alt="左旋右旋示意图"></p>
+</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/red-black-tree-set-2-insert/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/red-black-tree-set-2-insert/</a></p>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java</a></p>
 
             
 
@@ -237,7 +270,8 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/13/JAVA-Init-Value/" data-tooltip="JAVA 初始值问题" aria-label="上一篇: JAVA 初始值问题">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -308,13 +342,14 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="2">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/13/JAVA-Init-Value/" data-tooltip="JAVA 初始值问题" aria-label="上一篇: JAVA 初始值问题">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -369,7 +404,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="2">
     <i id="btn-close-shareoptions" class="fa fa-close"></i>
     <ul class="share-options">
         

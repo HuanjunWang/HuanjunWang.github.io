@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wanghuanjun.github.io/"/>
-  <updated>2017-12-12T08:56:48.792Z</updated>
+  <updated>2017-12-14T02:31:39.550Z</updated>
   <id>http://wanghuanjun.github.io/</id>
   
   <author>
@@ -17,17 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JAVA 初始值问题</title>
+    <link href="http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/"/>
+    <id>http://wanghuanjun.github.io/2017/12/13/JAVA-Init-Value/</id>
+    <published>2017-12-13T06:31:52.000Z</published>
+    <updated>2017-12-14T02:31:39.550Z</updated>
+    
+    <content type="html"><![CDATA[<p>从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。<br>JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。<br><a id="more"></a></p><h4 id="函数内的局部变量"><a href="#函数内的局部变量" class="headerlink" title="函数内的局部变量"></a>函数内的局部变量</h4><p>函数内的局部变量，如果没有初始化就使用，编译器直接报错，使用这类问题不会引起什么后果。</p><pre><code>Error:(xx, xx) java: variable xxxx might not have been initialized</code></pre><h4 id="对象的成员变量"><a href="#对象的成员变量" class="headerlink" title="对象的成员变量"></a>对象的成员变量</h4><blockquote><p>默认初始值</p></blockquote><p>如果对象的成员变量没有通过任何方法初始化，在new出对象的时候，这些变量根据不同类型将会得到不同初始值.<br>boolean 会得到 false, byte, short, int, char, float, doubld 会得到各自类型的0， object reference 会得到 null。</p><blockquote><p>构造函数</p></blockquote><p>每一个类至少要有一个构造函数，如果没有声明任何构造函数，编译器则会自动创建一个默认的构造函数，默认构造函数时一个没有参数且函数体为空。<br>构造函数可以通过参数不同来实现重载。</p><blockquote><p>初始化器</p></blockquote><p>可以在声明变量的时候，给变量一个初始值。使用这种初始化方式时，可以引用已经声明的变量来初始化当前变量，但是不能前向引用</p><pre><code>//OKprivate int a = 10;private int b = a;//Errorprivate int c = d;private int d = 10;</code></pre><p>初始化器的另外一种形式时初始化块，可以在类里面定义任意块初始化块，初始化块会按照从前到后的顺序执行。初始化块可以处理异常，在有多个重载的构造函数时，可以用它来初始化各构造函数无差异的部分。</p><h4 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h4><p>默认初始值 -&gt; 声明时的初始化 -&gt; 初始化块（从前到后） -&gt;  构造函数</p><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="https://www.javaworld.com/article/2076614/core-java/object-initialization-in-java.html" target="_blank" rel="noopener">https://www.javaworld.com/article/2076614/core-java/object-initialization-in-java.html</a></p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/Initialization.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/Initialization.java</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从C/C++转过来做JAVA的程序员一般会不自觉的关心变量的初始值问题，其实JAVA由于编译器的保护，初始值问题并没有C/C++那么突出。这里对初始值问题稍作分析。&lt;br&gt;JAVA的对象实质上是一块内存和操作这块一些函数。内存来维护对象的状态，这些状态在对象的生命周期中可能会改变。对象变量的初始值决定了对象的初始状态。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://wanghuanjun.github.io/categories/JAVA/"/>
+    
+    
+      <category term="JAVA" scheme="http://wanghuanjun.github.io/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>红黑树</title>
     <link href="http://wanghuanjun.github.io/2017/12/12/Black-Red-Tree/"/>
     <id>http://wanghuanjun.github.io/2017/12/12/Black-Red-Tree/</id>
     <published>2017-12-12T08:20:03.000Z</published>
-    <updated>2017-12-12T08:56:48.792Z</updated>
+    <updated>2017-12-15T08:05:28.010Z</updated>
     
-    <content type="html"><![CDATA[<p>红黑树<br><a id="more"></a></p>]]></content>
+    <content type="html"><![CDATA[<p>红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点</p><ol><li>每个节点都为红色或者黑色</li><li>根节点为黑色</li><li>红色节点的父节点和子节点不能为红色</li><li>从根到叶的所有路径，黑色节点数相同</li></ol><a id="more"></a><h4 id="对比-AVLTree"><a href="#对比-AVLTree" class="headerlink" title="对比 AVLTree"></a>对比 AVLTree</h4><p>AVLTree 拥有更高的平衡性，但是为了维护其平衡性，在插入和删除时便需要做更多的旋转。如果实际中插入和删除的操作比较频繁，那么使用红黑树就优于AVL Tree，反之，如果插入删除不是特别频繁，AVL Tree则更好，因为它的查询性能优于红黑树。</p><h4 id="平衡性"><a href="#平衡性" class="headerlink" title="平衡性"></a>平衡性</h4><p>红黑树从根到页的所有路径中，最长路径不大于最短路径的2倍。因为使用路径的黑色节点数相同，而红色不能相邻，所以极端情况下一条路径全是黑色，一条路径红黑相间，最长路径为最短路径的两倍。</p><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ol><li>先按照标准二叉查找树的方法插入新节点，并把新节点标为红色。</li><li>如果新节点为根节点，则把新节点变为黑色。</li><li><p>如果新节点的父节点是红色，则需要通过颜色变更和树旋转来恢复红黑树。<br>3.1 颜色变更<br>如果新节点的叔节点也为红色，则可以通过颜色变更来恢复红黑树。<br>将新节点的父节点叔节点变为黑色，祖父节点变为红色。根据祖父节点的情况再进行颜色变更或旋转。<br>3.2 旋转<br>如果新节点的叔节点为黑色或者为空，则可以通过旋转来恢复红黑树。旋转类似AVL Tree,分四种情况</p><pre><code>旋转之前先更新与祖先节点的联系</code></pre></li></ol><ul><li><p><strong>左左</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的左子节点<br>需要一次右旋转，并且改变祖父，父节点的颜色。<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png" alt="右旋示意图"></p></li><li><p><strong>左右</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的右子节点<br>需要先左旋，再右旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png" alt="右旋左旋示意图"></p></li><li><p><strong>右右</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的右子节点<br>需要一次左旋转， 并且改变祖父，父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png" alt="左旋示意图"></p></li><li><p><strong>右左</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的左子节点<br>需要先右旋，再左旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png" alt="左旋右旋示意图"></p></li></ul><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/red-black-tree-set-2-insert/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/red-black-tree-set-2-insert/</a></p><h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;红黑树&lt;br&gt;
+      &lt;p&gt;红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每个节点都为红色或者黑色&lt;/li&gt;
+&lt;li&gt;根节点为黑色&lt;/li&gt;
+&lt;li&gt;红色节点的父节点和子节点不能为红色&lt;/li&gt;
+&lt;li&gt;从根到叶的所有路径，黑色节点数相同&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -43,13 +71,13 @@
     <link href="http://wanghuanjun.github.io/2017/12/12/AVL-Tree/"/>
     <id>http://wanghuanjun.github.io/2017/12/12/AVL-Tree/</id>
     <published>2017-12-12T07:04:03.000Z</published>
-    <updated>2017-12-12T08:55:18.142Z</updated>
+    <updated>2017-12-15T02:38:01.900Z</updated>
     
-    <content type="html"><![CDATA[<p>AVL Tree 是一种平衡二叉查找树。其中任一节点的左右子树的高度差不能大于一。AVL Tree查找插入删除，在最坏情况下的时间复杂度都为O(log n)。插入和删除可能破坏AVL Tree的平衡性，可以通过树旋转来恢复树的平衡性。<br><a id="more"></a></p>]]></content>
+    <content type="html"><![CDATA[<p>AVL Tree 是一种自平衡二叉查找树。<br>首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。<br>可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过旋转来维持树的平衡性，从而实现最坏情况下查询的复杂度仍为O(log n)。<br><a id="more"></a><br>AVL Tree 满足其中任一节点的左右子树的高度差不大于1。查找操作不会对树的平衡造成任何影响。参入和删除则可能影响熟的平衡性。</p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/AVLTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/AVLTree.java</a></p><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/avl-tree-set-1-insertion/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/avl-tree-set-1-insertion/</a><br><a href="http://www.geeksforgeeks.org/avl-tree-set-2-deletion/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/avl-tree-set-2-deletion/</a></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;AVL Tree 是一种平衡二叉查找树。其中任一节点的左右子树的高度差不能大于一。AVL Tree查找插入删除，在最坏情况下的时间复杂度都为O(log n)。插入和删除可能破坏AVL Tree的平衡性，可以通过树旋转来恢复树的平衡性。&lt;br&gt;
+      &lt;p&gt;AVL Tree 是一种自平衡二叉查找树。&lt;br&gt;首先它是一棵二叉查找树（Binary Search Tree)，二叉查找树满足左子树所有节点小于当前节点，右子树所有节点大于当前节点，中序遍历二叉查找树会得到一个从小到大的有序序列。二叉查找树查找的时间复杂度平均为O(log n)，最坏情况下，树退化为一个链表时，查找的时间复杂度为O(n)。&lt;br&gt;可以通过维持树的平衡性来防止时间复杂度的退化。AVL Tree通过旋转来维持树的平衡性，从而实现最坏情况下查询的复杂度仍为O(log n)。&lt;br&gt;
     
     </summary>
     
