@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wanghuanjun.github.io/"/>
-  <updated>2017-12-14T02:31:39.550Z</updated>
+  <updated>2017-12-18T09:08:53.445Z</updated>
   <id>http://wanghuanjun.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-math的安装</title>
+    <link href="http://wanghuanjun.github.io/2017/12/18/Math-test/"/>
+    <id>http://wanghuanjun.github.io/2017/12/18/Math-test/</id>
+    <published>2017-12-18T06:36:23.000Z</published>
+    <updated>2017-12-18T09:08:53.445Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Mathjax"><a href="#Mathjax" class="headerlink" title="Mathjax"></a>Mathjax</h4><p>mathjax 是一个javascript写的渲染数学公式的引擎<br><a href="https://www.mathjax.org/" target="_blank" rel="noopener">https://www.mathjax.org/</a><br>在hexo中安装 hexo-math插件可以支持mathjax<br><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">https://github.com/hexojs/hexo-math</a><br><a id="more"></a></p><h4 id="hexo-math"><a href="#hexo-math" class="headerlink" title="hexo-math"></a>hexo-math</h4><p>hexo-math最新版本安装非常简单，只有在blog的根目录下运行<br>    npm install hexo-math —save </p><p>在new post头加上下面一行即可<br>    mathjax: true</p><p>如果没有效果，可以修改 node_modules\hexo-math\lib\option.js<br>  mathjax: {<br>    src: “<a href="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" target="_blank" rel="noopener">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</a>“,</p><h4 id="hexo-math工作原理"><a href="#hexo-math工作原理" class="headerlink" title="hexo-math工作原理"></a>hexo-math工作原理</h4><p>hexo-math 检查mathjax是否置为true,如果没有则不对改pose进行操作。如果mathjax置为true，hexo将math tag转化为 mathjax能识别的格式 然后将 node_modules\hexo-math\lib\option.js 关于mathjax的config append到该pose生成的html里面。<br>而Mathjax.js则会对html里面的数学公式进行渲染。</p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>Simple inline $a = b + c$.</code></pre><p>Simple inline $a = b + c$.</p><pre><code>$$\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\right)$$</code></pre><script type="math/tex; mode=display">\frac{\partial u}{\partial t}= h^2 \left( \frac{\partial^2 u}{\partial x^2} +\frac{\partial^2 u}{\partial y^2} +\frac{\partial^2 u}{\partial z^2}\right)</script><pre><code>This equation {% math %}\cos 2\theta = \cos^2 \theta - \sin^2 \theta =  2 \cos^2 \theta - 1 {% endmath %} is inline.</code></pre><p>This equation <span>$\cos 2\theta = \cos^2 \theta - \sin^2 \theta =  2 \cos^2 \theta - 1$</span><!-- Has MathJax --> is inline.</p><pre><code>{% math %}\begin{aligned}\dot{x} & = \sigma(y-x) \\\dot{y} & = \rho x - y - xz \\\dot{z} & = -\beta z + xy\end{aligned}{% endmath %}</code></pre><span>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\\dot{y} &amp; = \rho x - y - xz \\\dot{z} &amp; = -\beta z + xy\end{aligned}$$</span><!-- Has MathJax -->]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;Mathjax&quot;&gt;&lt;a href=&quot;#Mathjax&quot; class=&quot;headerlink&quot; title=&quot;Mathjax&quot;&gt;&lt;/a&gt;Mathjax&lt;/h4&gt;&lt;p&gt;mathjax 是一个javascript写的渲染数学公式的引擎&lt;br&gt;&lt;a href=&quot;https://www.mathjax.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.mathjax.org/&lt;/a&gt;&lt;br&gt;在hexo中安装 hexo-math插件可以支持mathjax&lt;br&gt;&lt;a href=&quot;https://github.com/hexojs/hexo-math&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/hexojs/hexo-math&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://wanghuanjun.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://wanghuanjun.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>误差逆传播算法BP</title>
+    <link href="http://wanghuanjun.github.io/2017/12/18/error-back-propagation/"/>
+    <id>http://wanghuanjun.github.io/2017/12/18/error-back-propagation/</id>
+    <published>2017-12-18T01:20:49.000Z</published>
+    <updated>2017-12-18T09:08:47.032Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Error-BackPropagation"><a href="#Error-BackPropagation" class="headerlink" title="Error BackPropagation"></a>Error BackPropagation</h4><p>误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。<br>BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。<br><a id="more"></a></p><h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>以最简单的M-P神经元模型为例，来解释下BP算法。<br><img src="http://img.blog.csdn.net/20160414173648227" alt="M-P神经元"><br>如上图，该神经元接收的输入为x1, x2 … xn， 输入的权重分别为w1, w2, … wn。为了进一步简化，我们把阀值固定为0 。 f 取常用的sigmode 函数。<br>现在我们用</p><p>可以总结为，前向传播求损失，反向传播更新参数。<br>BP算法先将输入示例提供给输入层神经元，然后逐层前传，直到得到输出层的输出结果。</p><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://blog.csdn.net/taoyanqi8932/article/details/54575405" target="_blank" rel="noopener">http://blog.csdn.net/taoyanqi8932/article/details/54575405</a><br>周志华《<a href="https://item.jd.com/11867803.html" target="_blank" rel="noopener">机器学习</a>》5.3<br>Makedown 编辑数学公式： <a href="http://oiltang.com/2014/05/04/markdown-and-mathjax/" target="_blank" rel="noopener">http://oiltang.com/2014/05/04/markdown-and-mathjax/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;Error-BackPropagation&quot;&gt;&lt;a href=&quot;#Error-BackPropagation&quot; class=&quot;headerlink&quot; title=&quot;Error BackPropagation&quot;&gt;&lt;/a&gt;Error BackPropagation&lt;/h4&gt;&lt;p&gt;误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。&lt;br&gt;BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Machine Learning" scheme="http://wanghuanjun.github.io/categories/Machine-Learning/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://wanghuanjun.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA 初始值问题</title>
@@ -45,7 +89,7 @@
     <published>2017-12-12T08:20:03.000Z</published>
     <updated>2017-12-15T08:05:28.010Z</updated>
     
-    <content type="html"><![CDATA[<p>红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点</p><ol><li>每个节点都为红色或者黑色</li><li>根节点为黑色</li><li>红色节点的父节点和子节点不能为红色</li><li>从根到叶的所有路径，黑色节点数相同</li></ol><a id="more"></a><h4 id="对比-AVLTree"><a href="#对比-AVLTree" class="headerlink" title="对比 AVLTree"></a>对比 AVLTree</h4><p>AVLTree 拥有更高的平衡性，但是为了维护其平衡性，在插入和删除时便需要做更多的旋转。如果实际中插入和删除的操作比较频繁，那么使用红黑树就优于AVL Tree，反之，如果插入删除不是特别频繁，AVL Tree则更好，因为它的查询性能优于红黑树。</p><h4 id="平衡性"><a href="#平衡性" class="headerlink" title="平衡性"></a>平衡性</h4><p>红黑树从根到页的所有路径中，最长路径不大于最短路径的2倍。因为使用路径的黑色节点数相同，而红色不能相邻，所以极端情况下一条路径全是黑色，一条路径红黑相间，最长路径为最短路径的两倍。</p><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ol><li>先按照标准二叉查找树的方法插入新节点，并把新节点标为红色。</li><li>如果新节点为根节点，则把新节点变为黑色。</li><li><p>如果新节点的父节点是红色，则需要通过颜色变更和树旋转来恢复红黑树。<br>3.1 颜色变更<br>如果新节点的叔节点也为红色，则可以通过颜色变更来恢复红黑树。<br>将新节点的父节点叔节点变为黑色，祖父节点变为红色。根据祖父节点的情况再进行颜色变更或旋转。<br>3.2 旋转<br>如果新节点的叔节点为黑色或者为空，则可以通过旋转来恢复红黑树。旋转类似AVL Tree,分四种情况</p><pre><code>旋转之前先更新与祖先节点的联系</code></pre></li></ol><ul><li><p><strong>左左</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的左子节点<br>需要一次右旋转，并且改变祖父，父节点的颜色。<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png" alt="右旋示意图"></p></li><li><p><strong>左右</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的右子节点<br>需要先左旋，再右旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png" alt="右旋左旋示意图"></p></li><li><p><strong>右右</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的右子节点<br>需要一次左旋转， 并且改变祖父，父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png" alt="左旋示意图"></p></li><li><p><strong>右左</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的左子节点<br>需要先右旋，再左旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png" alt="左旋右旋示意图"></p></li></ul><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/red-black-tree-set-2-insert/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/red-black-tree-set-2-insert/</a></p><h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java</a></p>]]></content>
+    <content type="html"><![CDATA[<p>红黑树和AVL Tree一样，都属于自平衡二叉查找树。红黑树有如下特点</p><ol><li>每个节点都为红色或者黑色</li><li>根节点为黑色</li><li>红色节点的父节点和子节点不能为红色</li><li>从根到叶的所有路径，黑色节点数相同</li></ol><a id="more"></a><h4 id="对比-AVLTree"><a href="#对比-AVLTree" class="headerlink" title="对比 AVLTree"></a>对比 AVLTree</h4><p>AVLTree 拥有更高的平衡性，但是为了维护其平衡性，在插入和删除时便需要做更多的旋转。如果实际中插入和删除的操作比较频繁，那么使用红黑树就优于AVL Tree，反之，如果插入删除不是特别频繁，AVL Tree则更好，因为它的查询性能优于红黑树。</p><h4 id="平衡性"><a href="#平衡性" class="headerlink" title="平衡性"></a>平衡性</h4><p>红黑树从根到页的所有路径中，最长路径不大于最短路径的2倍。因为使用路径的黑色节点数相同，而红色不能相邻，所以极端情况下一条路径全是黑色，一条路径红黑相间，最长路径为最短路径的两倍。</p><h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ol><li>先按照标准二叉查找树的方法插入新节点，并把新节点标为红色。</li><li>如果新节点为根节点，则把新节点变为黑色。</li><li><p>如果新节点的父节点是红色，则需要通过颜色变更和树旋转来恢复红黑树。<br>3.1 颜色变更<br>如果新节点的叔节点也为红色，则可以通过颜色变更来恢复红黑树。<br>将新节点的父节点叔节点变为黑色，祖父节点变为红色。根据祖父节点的情况再进行颜色变更或旋转。<br>3.2 旋转<br>如果新节点的叔节点为黑色或者为空，则可以通过旋转来恢复红黑树。旋转类似AVL Tree,分四种情况</p><pre><code> 旋转之前先更新与祖先节点的联系</code></pre></li></ol><ul><li><p><strong>左左</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的左子节点<br>需要一次右旋转，并且改变祖父，父节点的颜色。<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3a1.png" alt="右旋示意图"></p></li><li><p><strong>左右</strong><br>父节点是祖父节点的左子节点， 新节点时父节点的右子节点<br>需要先左旋，再右旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3b.png" alt="右旋左旋示意图"></p></li><li><p><strong>右右</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的右子节点<br>需要一次左旋转， 并且改变祖父，父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3c.png" alt="左旋示意图"></p></li><li><p><strong>右左</strong><br>父节点是祖父节点的右子节点， 新节点时父节点的左子节点<br>需要先右旋，再左旋， 并且改变新节点和祖父节点的颜色<br><img src="http://www.geeksforgeeks.org/wp-content/uploads/redBlackCase3d.png" alt="左旋右旋示意图"></p></li></ul><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://www.geeksforgeeks.org/red-black-tree-set-2-insert/" target="_blank" rel="noopener">http://www.geeksforgeeks.org/red-black-tree-set-2-insert/</a></p><h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><a href="https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java" target="_blank" rel="noopener">https://github.com/HuanjunWang/JavaLearning/blob/master/src/RedBlackTree.java</a></p>]]></content>
     
     <summary type="html">
     
@@ -93,9 +137,9 @@
     <link href="http://wanghuanjun.github.io/2017/12/12/hello-world/"/>
     <id>http://wanghuanjun.github.io/2017/12/12/hello-world/</id>
     <published>2017-12-12T02:57:13.969Z</published>
-    <updated>2017-12-12T08:47:34.575Z</updated>
+    <updated>2017-12-18T08:52:31.831Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><p><a href="https://yanyinhong.github.io/2017/05/01/How-to-build-blog-with-hexo-and-github/" target="_blank" rel="noopener">Hexo setup Guide</a><br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="noopener">Hexo Theme</a></p>]]></content>
     
     <summary type="html">
     
@@ -103,6 +147,10 @@
     
     </summary>
     
+      <category term="hexo" scheme="http://wanghuanjun.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://wanghuanjun.github.io/tags/hexo/"/>
     
   </entry>
   

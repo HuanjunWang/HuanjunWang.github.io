@@ -6,7 +6,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Echo&#39;s Blog">
-    <title>Hello Hexo - Echo&#39;s Blog</title>
+    <title>误差逆传播算法BP - Echo&#39;s Blog</title>
     <meta name="author" content="Echo Wang">
     
         <meta name="keywords" content="hexo,javascript,">
@@ -15,18 +15,20 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="hexo">
+    <meta name="description" content="Error BackPropagation误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。">
+<meta name="keywords" content="Machine Learning">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hello Hexo">
-<meta property="og:url" content="http://wanghuanjun.github.io/2017/12/12/hello-world/index.html">
+<meta property="og:title" content="误差逆传播算法BP">
+<meta property="og:url" content="http://wanghuanjun.github.io/2017/12/18/error-back-propagation/index.html">
 <meta property="og:site_name" content="Echo&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="Error BackPropagation误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-18T08:52:31.831Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20160414173648227">
+<meta property="og:updated_time" content="2017-12-18T09:08:47.032Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Hexo">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="误差逆传播算法BP">
+<meta name="twitter:description" content="Error BackPropagation误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160414173648227">
     
     
         
@@ -192,20 +194,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Hello Hexo
+            误差逆传播算法BP
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-12-12T10:57:13+08:00">
+    <time itemprop="datePublished" datetime="2017-12-18T09:20:49+08:00">
 	
-		    12月 12, 2017
+		    12月 18, 2017
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/hexo/">hexo</a>
+    <a class="category-link" href="/categories/Machine-Learning/">Machine Learning</a>
 
 
     
@@ -216,16 +218,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<p><a href="https://yanyinhong.github.io/2017/05/01/How-to-build-blog-with-hexo-and-github/" target="_blank" rel="noopener">Hexo setup Guide</a><br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="noopener">Hexo Theme</a></p>
+            <h4 id="Error-BackPropagation"><a href="#Error-BackPropagation" class="headerlink" title="Error BackPropagation"></a>Error BackPropagation</h4><p>误差拟传播算法，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。<br>BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。<br><a id="more"></a></p>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>以最简单的M-P神经元模型为例，来解释下BP算法。<br><img src="http://img.blog.csdn.net/20160414173648227" alt="M-P神经元"><br>如上图，该神经元接收的输入为x1, x2 … xn， 输入的权重分别为w1, w2, … wn。为了进一步简化，我们把阀值固定为0 。 f 取常用的sigmode 函数。<br>现在我们用</p>
+<p>可以总结为，前向传播求损失，反向传播更新参数。<br>BP算法先将输入示例提供给输入层神经元，然后逐层前传，直到得到输出层的输出结果。</p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://blog.csdn.net/taoyanqi8932/article/details/54575405" target="_blank" rel="noopener">http://blog.csdn.net/taoyanqi8932/article/details/54575405</a><br>周志华《<a href="https://item.jd.com/11867803.html" target="_blank" rel="noopener">机器学习</a>》5.3<br>Makedown 编辑数学公式： <a href="http://oiltang.com/2014/05/04/markdown-and-mathjax/" target="_blank" rel="noopener">http://oiltang.com/2014/05/04/markdown-and-mathjax/</a></p>
 
             
 
@@ -236,7 +232,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/hexo/">hexo</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Machine-Learning/">Machine Learning</a>
 
             </div>
         
@@ -247,7 +243,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/AVL-Tree/" data-tooltip="AVL 树" aria-label="上一篇: AVL 树">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/18/Math-test/" data-tooltip="hexo-math的安装" aria-label="上一篇: hexo-math的安装">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -255,7 +251,8 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/13/JAVA-Init-Value/" data-tooltip="JAVA 初始值问题" aria-label="下一篇: JAVA 初始值问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -273,7 +270,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/hello-world/" title="分享到 Weibo">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/" title="分享到 Weibo">
                     <i class="fa fa-weibo" aria-hidden="true"></i>
                 </a>
             </li>
@@ -281,7 +278,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/hello-world/&amp;title=Hello Hexo" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/&amp;title=误差逆传播算法BP" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -324,7 +321,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/12/AVL-Tree/" data-tooltip="AVL 树" aria-label="上一篇: AVL 树">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/18/Math-test/" data-tooltip="hexo-math的安装" aria-label="上一篇: hexo-math的安装">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -332,7 +329,8 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/12/13/JAVA-Init-Value/" data-tooltip="JAVA 初始值问题" aria-label="下一篇: JAVA 初始值问题">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -350,7 +348,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/hello-world/" title="分享到 Weibo">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/" title="分享到 Weibo">
                     <i class="fa fa-weibo" aria-hidden="true"></i>
                 </a>
             </li>
@@ -358,7 +356,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/hello-world/&amp;title=Hello Hexo" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/&amp;title=误差逆传播算法BP" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -385,7 +383,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/12/hello-world/">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/">
                     <i class="fa fa-weibo" aria-hidden="true"></i><span>分享到 Weibo</span>
                 </a>
             </li>
@@ -393,7 +391,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/12/hello-world/&amp;title=Hello Hexo">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/error-back-propagation/&amp;title=误差逆传播算法BP">
                     <i class="fa fa-qq" aria-hidden="true"></i><span>分享到 QQ</span>
                 </a>
             </li>
@@ -446,24 +444,7 @@
 <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/script-peofhqjkzcghmndknakluequy1y6owxdwpaqyju9ntl9zxnk7rdolb3rjjoj.min.js"></script>
-<!--SCRIPTS END--><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<!--SCRIPTS END--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
 
