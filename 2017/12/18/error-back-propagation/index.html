@@ -24,9 +24,9 @@
 <meta property="og:description" content="误差拟传播算法(Error BackPropagation 简称BP)，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://img.blog.csdn.net/20160414173648227">
-<meta property="og:image" content="http://wanghuanjun.github.io/content/images/BP.jpg">
-<meta property="og:image" content="http://wanghuanjun.github.io/content/images/BP2.jpg">
-<meta property="og:updated_time" content="2017-12-20T05:38:44.558Z">
+<meta property="og:image" content="http://wanghuanjun.github.io/assets/images/BP.jpg">
+<meta property="og:image" content="http://wanghuanjun.github.io/assets/images/BP2.jpg">
+<meta property="og:updated_time" content="2017-12-20T05:49:58.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="误差逆传播算法BP">
 <meta name="twitter:description" content="误差拟传播算法(Error BackPropagation 简称BP)，是最成功的神经网络学习算法。BP网络通常指用误差逆传播算法训练的前馈神经网络。BP算法基于梯度下降策略，以目标的负梯度方向对参数进行调整。">
@@ -280,7 +280,7 @@
 
         w += delta_w
         theta += delta_theta
-</code></pre><p>收敛结果如下，eta 代表学习率 $ \eta $<br><img src="/content/images/BP.jpg" alt="img"></p>
+</code></pre><p>收敛结果如下，eta 代表学习率 $ \eta $<br><img src="/assets/images/BP.jpg" alt="img"></p>
 <h4 id="单隐层前馈神经网络"><a href="#单隐层前馈神经网络" class="headerlink" title="单隐层前馈神经网络"></a>单隐层前馈神经网络</h4><p>如果将样本数据改为如下， $ y $ 表示 $ x_1 $ $x_2$的异或。</p>
 <div class="table-container">
 <table>
@@ -354,7 +354,7 @@ e_h = b_h(1-b_h)w_h\hat{y} (1 - \hat{y}) (y - \hat{y})$$</span><!-- Has MathJax 
         theta += delta_theta
         v += delta_v
         gamma += delta_gamma
-</code></pre><p>收敛结果如下，eta 代表学习率 $ \eta $<br><img src="/content/images/BP2.jpg" alt="img"></p>
+</code></pre><p>收敛结果如下，eta 代表学习率 $ \eta $<br><img src="/assets/images/BP2.jpg" alt="img"></p>
 <h4 id="算法总结"><a href="#算法总结" class="headerlink" title="算法总结"></a>算法总结</h4><p>可以总结为，前向传播求损失，反向传播更新参数。<br>BP算法先将输入示例提供给输入层神经元，然后逐层前传，直到得到输出层的输出结果。</p>
 <h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><a href="https://github.com/HuanjunWang/MLExample/blob/master/NeuralNetwork/BP.py" target="_blank" rel="noopener">https://github.com/HuanjunWang/MLExample/blob/master/NeuralNetwork/BP.py</a><br><a href="https://github.com/HuanjunWang/MLExample/blob/master/NeuralNetwork/BP2.py" target="_blank" rel="noopener">https://github.com/HuanjunWang/MLExample/blob/master/NeuralNetwork/BP2.py</a></p>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a href="http://blog.csdn.net/taoyanqi8932/article/details/54575405" target="_blank" rel="noopener">http://blog.csdn.net/taoyanqi8932/article/details/54575405</a><br>周志华《<a href="https://item.jd.com/11867803.html" target="_blank" rel="noopener">机器学习</a>》5.3 </p>
