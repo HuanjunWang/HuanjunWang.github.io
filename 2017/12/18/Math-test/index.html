@@ -6,7 +6,7 @@
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Echo&#39;s Blog">
-    <title>hexo-math的安装 - Echo&#39;s Blog</title>
+    <title>hexo-math介绍 - Echo&#39;s Blog</title>
     <meta name="author" content="Echo Wang">
     
         <meta name="keywords" content="hexo,javascript,">
@@ -15,18 +15,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Mathjaxmathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
+    <meta name="description" content="mathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="hexo-math的安装">
+<meta property="og:title" content="hexo-math介绍">
 <meta property="og:url" content="http://wanghuanjun.github.io/2017/12/18/Math-test/index.html">
 <meta property="og:site_name" content="Echo&#39;s Blog">
-<meta property="og:description" content="Mathjaxmathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
+<meta property="og:description" content="mathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-18T09:08:53.445Z">
+<meta property="og:updated_time" content="2017-12-19T02:20:48.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo-math的安装">
-<meta name="twitter:description" content="Mathjaxmathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
+<meta name="twitter:title" content="hexo-math介绍">
+<meta name="twitter:description" content="mathjax 是一个javascript写的渲染数学公式的引擎https://www.mathjax.org/在hexo中安装 hexo-math插件可以支持mathjaxhttps://github.com/hexojs/hexo-math">
     
     
         
@@ -192,7 +192,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            hexo-math的安装
+            hexo-math介绍
         </h1>
     
     
@@ -216,12 +216,16 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h4 id="Mathjax"><a href="#Mathjax" class="headerlink" title="Mathjax"></a>Mathjax</h4><p>mathjax 是一个javascript写的渲染数学公式的引擎<br><a href="https://www.mathjax.org/" target="_blank" rel="noopener">https://www.mathjax.org/</a><br>在hexo中安装 hexo-math插件可以支持mathjax<br><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">https://github.com/hexojs/hexo-math</a><br><a id="more"></a></p>
-<h4 id="hexo-math"><a href="#hexo-math" class="headerlink" title="hexo-math"></a>hexo-math</h4><p>hexo-math最新版本安装非常简单，只有在blog的根目录下运行<br>    npm install hexo-math —save </p>
+            <p>mathjax 是一个javascript写的渲染数学公式的引擎<br><a href="https://www.mathjax.org/" target="_blank" rel="noopener">https://www.mathjax.org/</a><br>在hexo中安装 hexo-math插件可以支持mathjax<br><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">https://github.com/hexojs/hexo-math</a><br><a id="more"></a><br>Mathjax tex support<br><a href="http://docs.mathjax.org/en/latest/tex.html#" target="_blank" rel="noopener">http://docs.mathjax.org/en/latest/tex.html#</a><br>LaTeX语法中文教程<br><a href="https://www.zybuluo.com/knight/note/96093" target="_blank" rel="noopener">https://www.zybuluo.com/knight/note/96093</a><br>makedown 表格生成器<br><a href="https://www.tablesgenerator.com/markdown_tables" target="_blank" rel="noopener">https://www.tablesgenerator.com/markdown_tables</a></p>
+<h4 id="hexo-math-安装"><a href="#hexo-math-安装" class="headerlink" title="hexo-math 安装"></a>hexo-math 安装</h4><p>hexo-math最新版本安装非常简单，只有在blog的根目录下运行<br>    npm install hexo-math —save </p>
 <p>在new post头加上下面一行即可<br>    mathjax: true</p>
-<p>如果没有效果，可以修改 node_modules\hexo-math\lib\option.js<br>  mathjax: {<br>    src: “<a href="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" target="_blank" rel="noopener">http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</a>“,</p>
-<h4 id="hexo-math工作原理"><a href="#hexo-math工作原理" class="headerlink" title="hexo-math工作原理"></a>hexo-math工作原理</h4><p>hexo-math 检查mathjax是否置为true,如果没有则不对改pose进行操作。如果mathjax置为true，hexo将math tag转化为 mathjax能识别的格式 然后将 node_modules\hexo-math\lib\option.js 关于mathjax的config append到该pose生成的html里面。<br>而Mathjax.js则会对html里面的数学公式进行渲染。</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>Simple inline $a = b + c$.
+<p>如果没有效果，可以修改 node_modules\hexo-math\lib\option.js</p>
+<pre><code>mathjax: { 
+    src: &quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML&quot;,
+</code></pre><h4 id="hexo-math工作原理"><a href="#hexo-math工作原理" class="headerlink" title="hexo-math工作原理"></a>hexo-math工作原理</h4><p>hexo-math 检查mathjax是否置为true,如果没有则不对改post进行操作。如果mathjax置为true，hexo将math tag转化为 mathjax能识别的格式 然后将 node_modules\hexo-math\lib\option.js 关于mathjax的config append到该pose生成的html里面。<br>而Mathjax.js则会对html里面的数学公式进行渲染。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>$ \boldsymbol{x} \rm x  \it x \bf x \cal x \sl x \sf x \mit x \tt x  \sc x $ 
+</code></pre><p>$ \boldsymbol{x} \rm x  \it x \bf x \cal x \sl x \sf x \mit x \tt x  \sc x $</p>
+<pre><code>Simple inline $a = b + c$.
 </code></pre><p>Simple inline $a = b + c$.</p>
 <pre><code>$$\frac{\partial u}{\partial t}
 = h^2 \left( \frac{\partial^2 u}{\partial x^2} +
@@ -298,7 +302,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math的安装" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math介绍" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -375,7 +379,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math的安装" title="分享到 QQ">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math介绍" title="分享到 QQ">
                     <i class="fa fa-qq" aria-hidden="true"></i>
                 </a>
             </li>
@@ -410,7 +414,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math的安装">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wanghuanjun.github.io/2017/12/18/Math-test/&amp;title=hexo-math介绍">
                     <i class="fa fa-qq" aria-hidden="true"></i><span>分享到 QQ</span>
                 </a>
             </li>
